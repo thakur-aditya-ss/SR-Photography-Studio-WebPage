@@ -44,32 +44,34 @@
 
 
   <!-- ===== Inquiry Form Section ===== -->
-  <section id="inquiry" class="inquiry">
-    <h4 class="sizee">Send Enquiry</h4><br><br><br><br>
-    <form id="inquiryForm" action="https://formsubmit.co/aaasingh1010@gmail.com" method="POST">
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-      <input type="tel" id="phone" name="phone" placeholder="Your Phone" required />
-      <select id="shootType" name="shootType" required>
-        <option value="">Select Shoot Type</option>
-        <option>Haldi Ceremony</option>
-        <option>Mehndi Ceremony</option>
-        <option>Wedding Ceremony</option>
-        <option>Reception</option>
-        <option>Prewedding</option>
-        <option>Maternity</option>
-        <option>Baby Shoot</option>
-        <option>Reel Shoot</option>
-      </select>
-      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+  <section id="inquiry" class="inquiry parallax-section bg-parallax-1">
+    <div style="background: rgba(0,0,0,0.7); padding: 50px; border-radius: 30px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); max-width: 800px; margin: auto;">
+        <h4 class="sizee">Send Enquiry</h4><br><br>
+        <form id="inquiryForm" action="https://formsubmit.co/aaasingh1010@gmail.com" method="POST">
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone" required />
+        <select id="shootType" name="shootType" required>
+            <option value="">Select Shoot Type</option>
+            <option>Haldi Ceremony</option>
+            <option>Mehndi Ceremony</option>
+            <option>Wedding Ceremony</option>
+            <option>Reception</option>
+            <option>Prewedding</option>
+            <option>Maternity</option>
+            <option>Baby Shoot</option>
+            <option>Reel Shoot</option>
+        </select>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-      <!-- Hidden Fields for FormSubmit -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+        <!-- Hidden Fields for FormSubmit -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
 
-      <button type="submit" class="btn">Submit Inquiry</button>
-    </form>
-    <p id="responseMsg"></p>
+        <button type="submit" class="btn">Submit Inquiry</button>
+        </form>
+        <p id="responseMsg"></p>
+    </div>
   </section>
 
   <!-- ===== Location Section ===== -->
