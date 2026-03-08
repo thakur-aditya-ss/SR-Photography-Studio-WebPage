@@ -184,6 +184,8 @@ function generateProfessionalBill() {
             <tbody>
     `;
 
+    let billSummary = `Order ID: SR-#${id}\nDate: ${dateStr}\n\nSelected Shoots:\n`;
+
     cart.forEach(item => {
         total += item.price;
         itemsHtml += `
@@ -192,7 +194,13 @@ function generateProfessionalBill() {
                 <td style="padding: 15px 0; text-align: right; font-weight: 700;">₹${item.price.toLocaleString()}</td>
             </tr>
         `;
+        billSummary += `- ${item.name}: ₹${item.price.toLocaleString()}\n`;
     });
+
+    billSummary += `\nGRAND TOTAL: ₹${total.toLocaleString()}`;
+
+    // Store summary for inquiry page
+    localStorage.setItem('pending_bill', billSummary);
 
     itemsHtml += `
             </tbody>
@@ -234,4 +242,59 @@ links.forEach(link => {
       navLinks.classList.remove('active');
     }
   });
+});
+
+// ===== Scroll Reveal Logic =====
+const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Once revealed, we can stop observing if we don't want it to repeat
+            // revealObserver.unobserve(entry.target);
+        } else {
+            // Optional: remove class to repeat animation on scroll up/down
+            // entry.target.classList.remove('active');
+        }
+    });
+}, {
+    threshold: 0.15, // Trigger when 15% of element is visible
+    rootMargin: '0px 0px -50px 0px' // Offset to trigger slightly before/after
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ===== Navbar Scroll Handling =====
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// ===== Hero Parallax Subtle Move =====
+const heroContent = document.querySelector('.hero-content');
+window.addEventListener('scroll', () => {
+    if (heroContent) {
+        let scrollValue = window.scrollY;
+        heroContent.style.transform = `translateY(${scrollValue * 0.3}px)`;
+        heroContent.style.opacity = 1 - (scrollValue / 600);
+    }
+});
+
+// ===== Inquiry Form Cart Integration =====
+document.addEventListener('DOMContentLoaded', () => {
+    const pendingBill = localStorage.getItem('pending_bill');
+    const messageField = document.getElementById('message');
+    const shootTypeField = document.getElementById('shootType');
+
+    if (pendingBill && messageField) {
+        messageField.value = `I am interested in booking the following shoots:\n\n${pendingBill}\n\nPlease contact me for further details.`;
+        
+        // Clear the pending bill after use
+        localStorage.removeItem('pending_bill');
+    }
 });
