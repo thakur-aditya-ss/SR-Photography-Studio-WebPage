@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -214,8 +214,10 @@ nav {
 }
 
 .hero-content p {
-  font-size: 18px;
-  margin: 12px 0 25px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 12px 0 30px;
+  color: #f0f0f0;
 }
 
 .hero-btn-group {
@@ -458,26 +460,320 @@ form button.btn:active {
   text-align: center;
 }
 
-/* ===== Footer ===== */
-footer {
-  background: #000;
-  color: white;
-  padding: 20px;
+/* ===== Modern Footer ===== */
+.modern-footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 80px 20px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+.footer-brand h2 {
+  color: #f8b400;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f8b400, #ff6a00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-brand p {
+  color: #aaa;
+  margin-bottom: 25px;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.footer-socials a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-socials a:hover {
+  background: #f8b400;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(248, 180, 0, 0.2);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  font-weight: 300;
+}
+
+.footer-links a:hover {
+  color: #f8b400;
+  transform: translateX(5px);
+}
+
+.footer-bottom {
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 30px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* ===== New Modern Aesthetics ===== */
+.glass-panel {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.glass-img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.glass-img:hover {
+  transform: scale(1.03) translateY(-5px);
+}
+
+.glow-btn {
+  box-shadow: 0 0 20px rgba(248, 180, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.glow-btn:hover::after {
+  left: 150%;
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 30px rgba(255, 145, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #f8b400, #ff6a00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+/* Animations */
+.animate-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Layout */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-image {
+  flex: 1;
+  position: relative;
+}
+
+.about-image::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid #f8b400;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.about-text {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  color: #333;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.about-text h4 {
+  margin-bottom: 25px;
+  color: #000;
+  font-size: 1.8rem;
+  font-family: "Outfit", sans-serif;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+  }
+}
+
+/* Services */
+.service-subtitle {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 40px 20px;
+  border-radius: 20px;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(248, 180, 0, 0.1), rgba(255, 106, 0, 0.05));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(248, 180, 0, 0.15);
+  border-color: rgba(248, 180, 0, 0.3);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease;
+}
+
+.glass-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.glass-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #111;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+}
+
+.glass-card .price {
+  font-weight: 800;
+  color: #f8b400;
+  font-size: 1.3rem;
+  background: rgba(248, 180, 0, 0.1);
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
 }
 
 
 .size {
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 350%;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  letter-spacing: -1px;
 }
 
 .sizee {
-  color: darkmagenta;
-  font-size: xx-large;
+  font-family: "Outfit", sans-serif;
+  color: #f8b400;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 /* ===== Gallery ===== */

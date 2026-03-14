@@ -7,7 +7,11 @@
   <title>SR Photography Studio</title>
   <!-- <link rel="shortcut icon" href="./logo.png" type="image/x-icon"> -->
   <link rel="stylesheet" href="style.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Roboto+Slab:wght@100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="home-page">
@@ -53,12 +57,12 @@
   <!-- ===== Hero Section ===== -->
   <section class="hero-slider">
 
-    <div class="hero-content">
-      <h2>Capture Your Best Moments with SR Photography</h2>
-      <p>We create memories that stay forever.</p>
+    <div class="hero-content glass-panel">
+      <h2 class="animate-up">Capture Your Best Moments with SR Photography</h2>
+      <p class="animate-up delay-1">We create memories that stay forever.</p>
 
-      <div class="hero-btn-group">
-        <a href="#inquiry" class="btn-hero">Book Now</a>
+      <div class="hero-btn-group animate-up delay-2">
+        <a href="#inquiry" class="btn-hero glow-btn">Book Now</a>
         <a href="./gallary.html" class="btn-hero-outline">Explore Gallery</a>
       </div>
     </div>
@@ -69,21 +73,25 @@
   <!-- ===== About Section ===== -->
   <!-- ===== About Section ===== -->
   <section id="about" class="about reveal">
-    <h2 class="size">About The Studio</h2>
-    <p>
-    <h4 class="sizee">📸 Welcome to SR Photography Studio 📸</h4><br><br>
-    Capturing Moments. Creating Memories. At SR Photography Studio, we believe every picture tells a
-    story — your story. Based on a passion for creativity and precision, our
-    professional photography services are dedicated to preserving your most
-    precious moments with artistic excellence and emotional depth. Whether
-    it’s the glow of a wedding, the joy of a maternity shoot, or the sparkle
-    in your baby’s first smile, we make every frame timeless. <br><br>
-    Founded by a team of creative professionals, SR Photography Studio is known for its innovative approach and keen eye
-    for detail. With years of experience in both candid and traditional photography, we specialize in transforming
-    real-life moments into stunning visual memories.<br><br>
-    Our mission is simple — to deliver high-quality, emotionally resonant photographs that reflect your unique story,
-    style, and personality.
-    </p>
+    <h2 class="size gradient-text">About The Studio</h2>
+    <div class="about-container">
+      <div class="about-image">
+        <img src="./Image/1.jpg" alt="About Studio" class="glass-img">
+      </div>
+      <div class="about-text glass-panel">
+        <h4 class="sizee">📸 Welcome to SR Photography Studio 📸</h4>
+        <p>Capturing Moments. Creating Memories. At SR Photography Studio, we believe every picture tells a story — your
+          story. Based on a passion for creativity and precision, our professional photography services are dedicated to
+          preserving your most precious moments with artistic excellence and emotional depth. Whether it’s the glow of a
+          wedding, the joy of a maternity shoot, or the sparkle in your baby’s first smile, we make every frame
+          timeless.</p>
+        <p>Founded by a team of creative professionals, SR Photography Studio is known for its innovative approach and
+          keen eye for detail. With years of experience in both candid and traditional photography, we specialize in
+          transforming real-life moments into stunning visual memories.</p>
+        <p>Our mission is simple — to deliver high-quality, emotionally resonant photographs that reflect your unique
+          story, style, and personality.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Parallax Interlude 1 -->
@@ -239,27 +247,51 @@
   <!-- ===== Services Section ===== -->
   <!-- ===== Services Section ===== -->
   <section id="services" class="services reveal-right">
-    <h2 class="size">Our Services</h2><br>
-    <p>We provide a wide range of professional photography and videography services tailored to meet your specific
-      needs:</p><br>
-    <p>
-      Wedding & Reception Photography – Elegant, emotional, and unforgettable coverage of your big day.<br><br>
-      Haldi & Mehndi Functions – Vibrant captures filled with colors, joy, and candid emotions.<br><br>
-      Pre-Wedding Shoots – Creative and cinematic storytelling that celebrates your love journey.<br><br>
-      Maternity & Baby Shoots – Gentle, beautiful, and heartwarming captures of new beginnings.<br><br>
-      Reel & Fashion Shoots – Stylish and trendsetting visuals perfect for social media and portfolios.<br><br>
-      Event & Corporate Photography – Professional coverage for events, branding, and promotional use.
-    </p><br><br>
+    <h2 class="size gradient-text">Our Services</h2>
+    <p class="service-subtitle">We provide a wide range of professional photography and videography services tailored to
+      meet your specific needs:</p>
 
     <div class="service-container">
-      <div class="card">Haldi Shoot - ₹10,000</div>
-      <div class="card">Mehndi Shoot - ₹10,000</div>
-      <div class="card">Wedding Shoot - ₹30,000</div>
-      <div class="card">Reception - ₹15,000</div>
-      <div class="card">Prewedding - ₹25,000</div>
-      <div class="card">Maternity Shoot - ₹10,000</div>
-      <div class="card">Baby Shoot - ₹8,000</div>
-      <div class="card">Reel Shoot - ₹4,000</div>
+      <div class="card glass-card">
+        <div class="card-icon">💛</div>
+        <h3>Haldi Shoot</h3>
+        <p class="price">₹10,000</p>
+      </div>
+      <div class="card glass-card">
+        <div class="card-icon">🌿</div>
+        <h3>Mehndi Shoot</h3>
+        <p class="price">₹10,000</p>
+      </div>
+      <div class="card glass-card">
+        <div class="card-icon">💍</div>
+        <h3>Wedding Shoot</h3>
+        <p class="price">₹30,000</p>
+      </div>
+      <div class="card glass-card">
+        <div class="card-icon">✨</div>
+        <h3>Reception</h3>
+        <p class="price">₹15,000</p>
+      </div>
+      <div class="card glass-card">
+        <div class="card-icon">🎬</div>
+        <h3>Prewedding</h3>
+        <p class="price">₹25,000</p>
+      </div>
+      <div class="card glass-card">
+        <div class="card-icon">🤰</div>
+        <h3>Maternity Shoot</h3>
+        <p class="price">₹10,000</p>
+      </div>
+      <div class="card glass-card">
+        <div class="card-icon">👶</div>
+        <h3>Baby Shoot</h3>
+        <p class="price">₹8,000</p>
+      </div>
+      <div class="card glass-card">
+        <div class="card-icon">📱</div>
+        <h3>Reel Shoot</h3>
+        <p class="price">₹4,000</p>
+      </div>
     </div>
   </section>
 
@@ -271,7 +303,7 @@
   <!-- ===== Inquiry Form Section ===== -->
   <!-- ===== Inquiry Form Section ===== -->
   <section id="inquiry" class="inquiry reveal">
-    <h2 class="size">Send Inquiry</h2><br><br>
+    <h2 class="size gradient-text">Send Inquiry</h2><br>
     <form id="inquiryForm" action="https://formsubmit.co/aaasingh1010@gmail.com" method="POST">
       <input type="text" id="name" name="name" placeholder="Your Name" required />
       <input type="email" id="email" name="email" placeholder="Your Email" required />
@@ -301,7 +333,7 @@
   <!-- ===== Location Section ===== -->
   <!-- ===== Location Section ===== -->
   <section id="location" class="location reveal">
-    <h4 class="sizee">Studio Location</h4><br><br>
+    <h4 class="sizee gradient-text">Studio Location</h4><br>
 
     <div class="location-wrapper">
 
@@ -329,8 +361,27 @@
 
 
   <!-- ===== Footer ===== -->
-  <footer>
-    <p>© 2018 SR Photography Studio | All Rights Reserved</p>
+  <footer class="modern-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>SR Photography</h2>
+        <p>Capturing your timeless moments with elegance and passion.</p>
+        <div class="footer-socials">
+          <a href="#">📸 Instagram</a>
+          <a href="#">📘 Facebook</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="#about">About</a>
+        <a href="./gallary.html">Gallery</a>
+        <a href="./service.html">Services</a>
+        <a href="#inquiry">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 SR Photography Studio | All Rights Reserved</p>
+    </div>
   </footer>
 
   <script src="./script.js"></script>
