@@ -9,15 +9,16 @@
 }
 
 body {
-  background-color: #fdfdfd;
+  background-color: #f0f2f5;
+  /* changed to slightly darker gray so the white curves pop better */
   color: #333;
   scroll-behavior: smooth;
 }
 
 header {
   background: transparent;
-  color: #333;
-  /* Dark text by default for visibility on white pages */
+  color: #fff;
+  /* Ensure it is white to match the hero */
   padding: 15px 0;
   position: fixed;
   width: 100%;
@@ -31,6 +32,14 @@ header {
   color: #fff;
 }
 
+/* For pages other than home page, we want the header to always look somewhat visible without hero */
+body:not(.home-page) header:not(.scrolled) {
+  background: rgba(32, 178, 170, 0.95);
+  /* lightseagreen with opacity */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
 
 header.scrolled {
   background: rgba(32, 178, 170, 0.95);
@@ -259,8 +268,23 @@ nav {
 
 /* ===== Section Common ===== */
 section {
-  padding: 60px 20px;
+  padding: 120px 20px 80px;
+  /* Increased top padding so navbar doesn't overlap text on non-home pages */
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+section.about,
+section.services,
+section.gallery,
+section.inquiry,
+section.location {
+  background: #ffffff;
+  border-radius: 40px;
+  margin: 40px auto;
+  width: 95%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 .about p {
@@ -382,7 +406,7 @@ section {
 
 /* ===== Inquiry Form ===== */
 .inquiry {
-  background: #fdfdfd;
+  background: #ffffff;
   padding-bottom: 80px;
 }
 
@@ -689,6 +713,10 @@ form button.btn:active {
 }
 
 /* Services */
+.services {
+  padding-bottom: 80px;
+}
+
 .service-subtitle {
   max-width: 800px;
   margin: 0 auto 50px;
