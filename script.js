@@ -1,58 +1,61 @@
 // ===== Auto Slider =====
 let counter = 1;
 setInterval(() => {
-  document.getElementById('radio' + counter).checked = true;
-  counter++;
-  if (counter > 4) counter = 1;
+    const radio = document.getElementById('radio' + counter);
+    if (radio) {
+        radio.checked = true;
+    }
+    counter++;
+    if (counter > 4) counter = 1;
 }, 5000);
 
 // ===== Form Validation and Submission =====
 const inquiryForm = document.getElementById('inquiryForm');
 if (inquiryForm) {
-  inquiryForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+    inquiryForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const shootType = document.getElementById('shootType').value;
-    const message = document.getElementById('message').value.trim();
-    const responseMsg = document.getElementById('responseMsg');
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const shootType = document.getElementById('shootType').value;
+        const message = document.getElementById('message').value.trim();
+        const responseMsg = document.getElementById('responseMsg');
 
-    if (!name || !email || !phone || !shootType || !message) {
-      responseMsg.style.color = "red";
-      responseMsg.textContent = "⚠️ Please fill all fields!";
-      return;
-    }
+        if (!name || !email || !phone || !shootType || !message) {
+            responseMsg.style.color = "red";
+            responseMsg.textContent = "⚠️ Please fill all fields!";
+            return;
+        }
 
-    // Show loading state
-    responseMsg.style.color = "blue";
-    responseMsg.textContent = "⏳ Sending inquiry...";
-    const submitBtn = inquiryForm.querySelector('button');
-    if (submitBtn) submitBtn.disabled = true;
+        // Show loading state
+        responseMsg.style.color = "blue";
+        responseMsg.textContent = "⏳ Sending inquiry...";
+        const submitBtn = inquiryForm.querySelector('button');
+        if (submitBtn) submitBtn.disabled = true;
 
-    // Send data using Fetch API
-    const formData = new FormData(this);
+        // Send data using Fetch API
+        const formData = new FormData(this);
 
-    fetch("https://formsubmit.co/ajax/aaasingh1010@gmail.com", {
-      method: "POST",
-      body: formData
-    })
-      .then(response => response.json())
-      .then(data => {
-        responseMsg.style.color = "green";
-        responseMsg.textContent = "✅ Inquiry sent successfully! We will contact you soon.";
-        inquiryForm.reset();
-      })
-      .catch(error => {
-        responseMsg.style.color = "red";
-        responseMsg.textContent = "⚠️ Something went wrong. Please try again.";
-        console.error('Error:', error);
-      })
-      .finally(() => {
-        if (submitBtn) submitBtn.disabled = false;
-      });
-  });
+        fetch("https://formsubmit.co/ajax/aaasingh1010@gmail.com", {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                responseMsg.style.color = "green";
+                responseMsg.textContent = "✅ Inquiry sent successfully! We will contact you soon.";
+                inquiryForm.reset();
+            })
+            .catch(error => {
+                responseMsg.style.color = "red";
+                responseMsg.textContent = "⚠️ Something went wrong. Please try again.";
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                if (submitBtn) submitBtn.disabled = false;
+            });
+    });
 }
 
 // ===== Cart Logic =====
@@ -68,7 +71,7 @@ function showToast(message) {
     }
     toast.innerText = message;
     toast.classList.add('show');
-    
+
     // Animate badge
     const badge = document.querySelector('.cart-count');
     if (badge) {
@@ -111,7 +114,7 @@ function renderCart() {
     const list = document.getElementById('cart-items-list');
     const summary = document.getElementById('cart-summary');
     const totalSpan = document.getElementById('total-amount');
-    
+
     if (!list) return;
 
     if (cart.length === 0) {
@@ -161,13 +164,13 @@ function generateProfessionalBill() {
     const billDetails = document.getElementById('bill-details');
     const billId = document.getElementById('bill-id');
     const billDate = document.getElementById('bill-date');
-    
+
     if (!billView || !billDetails) return;
 
     // Generate unique ID and Date
     const id = Math.floor(Math.random() * 900000) + 100000;
     const now = new Date();
-    const dateStr = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    const dateStr = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
     if (billId) billId.innerText = id;
     if (billDate) billDate.innerText = dateStr;
@@ -237,11 +240,11 @@ updateCartBadge();
 // Close menu when a link is clicked
 const links = document.querySelectorAll('.nav-links li a');
 links.forEach(link => {
-  link.addEventListener('click', () => {
-    if (navLinks.classList.contains('active')) {
-      navLinks.classList.remove('active');
-    }
-  });
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
+    });
 });
 
 // ===== Scroll Reveal Logic =====
@@ -293,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (pendingBill && messageField) {
         messageField.value = `I am interested in booking the following shoots:\n\n${pendingBill}\n\nPlease contact me for further details.`;
-        
+
         // Clear the pending bill after use
         localStorage.removeItem('pending_bill');
     }
