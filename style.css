@@ -167,7 +167,7 @@ nav {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   /* Parallax effect for hero */
   animation: heroSlide 25s infinite linear;
   position: relative;
@@ -871,7 +871,7 @@ form button.btn:active {
   height: 400px;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   position: relative;
   display: flex;
   align-items: center;
@@ -898,38 +898,10 @@ form button.btn:active {
 }
 
 /* ===== Scroll Reveal ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease-out;
-}
-
-.reveal.active {
+.reveal, .reveal-left, .reveal-right {
   opacity: 1;
-  transform: translateY(0);
-}
-
-/* Specific reveal variations */
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 1s ease-out;
-}
-
-.reveal-left.active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: all 1s ease-out;
-}
-
-.reveal-right.active {
-  opacity: 1;
-  transform: translateX(0);
+  transform: none;
+  transition: none;
 }
 
 .loc-btn:hover {

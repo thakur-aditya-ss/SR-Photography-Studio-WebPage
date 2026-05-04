@@ -247,26 +247,7 @@ links.forEach(link => {
     });
 });
 
-// ===== Scroll Reveal Logic =====
-const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            // Once revealed, we can stop observing if we don't want it to repeat
-            // revealObserver.unobserve(entry.target);
-        } else {
-            // Optional: remove class to repeat animation on scroll up/down
-            // entry.target.classList.remove('active');
-        }
-    });
-}, {
-    threshold: 0.15, // Trigger when 15% of element is visible
-    rootMargin: '0px 0px -50px 0px' // Offset to trigger slightly before/after
-});
-
-revealElements.forEach(el => revealObserver.observe(el));
 
 // ===== Navbar Scroll Handling =====
 const header = document.querySelector('header');
@@ -278,15 +259,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ===== Hero Parallax Subtle Move =====
-const heroContent = document.querySelector('.hero-content');
-window.addEventListener('scroll', () => {
-    if (heroContent) {
-        let scrollValue = window.scrollY;
-        heroContent.style.transform = `translateY(${scrollValue * 0.3}px)`;
-        heroContent.style.opacity = 1 - (scrollValue / 600);
-    }
-});
+
 
 // ===== Inquiry Form Cart Integration =====
 document.addEventListener('DOMContentLoaded', () => {
